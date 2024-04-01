@@ -199,7 +199,7 @@
         <h5>Exported Receivers:</h5> <span {% if exported_count.exported_receivers > 0 %} class="danger" {% endif %}> {{ exported_count.exported_receivers }}</span></br>
         <h5>Exported Providers:</h5> <span {% if exported_count.exported_providers > 0 %} class="danger" {% endif %}> {{ exported_count.exported_providers }}</span></br>
   {% endif %}
-  {% if app_type not in 'so' %}
+  <!-- {% if app_type not in 'so' %}
         <h2><i class="fa fa-certificate"></i> CERTIFICATE INFORMATION</h2>
         {% if certificate_analysis.certificate_info %}
         <div class="panel-body">
@@ -208,8 +208,8 @@
       {% else %}
       <span class="danger">Failed to read Code Signing Certificate or none available.</span>
       {% endif %}
-  {% endif %}
-      {% if permissions %}
+  {% endif %} -->
+      <!-- {% if permissions %}
       <h2><i class="fa fa-list"></i> APPLICATION PERMISSIONS</h2>
 
             <table class="basic">
@@ -244,7 +244,7 @@
             {% endfor %}
             </tbody>
             </table>
-      {% endif %}
+      {% endif %} -->
       
        {% if virus_total and virus_total.items|length > 9 and 'request successfully queued' not in virus_total.verbose_msg %}
        <h2><i class="fas fa-spider"></i> VIRUSTOTAL SCAN</h2>
@@ -275,7 +275,7 @@
                     </table>
             {% endif %}
       {% endif %}
-      {% if apkid and app_type not in 'jar,aar'%}
+      <!-- {% if apkid and app_type not in 'jar,aar'%}
       <h2><i class="fas fa-fingerprint"></i> APKID ANALYSIS</h2>
 
        <table class="basic">
@@ -342,7 +342,7 @@
                       {% endif %}
                     </tbody>
                     </table>
-      {% endif %}
+      {% endif %} -->
       {% if browsable_activities %}
       <h2><i class="fas fa-clone"></i> BROWSABLE ACTIVITIES</h2>
        <table class="basic">
@@ -683,7 +683,7 @@
                   </tbody>
                     </table>
     {% endif %} -->
-    {% if app_type not in 'so' %}
+    <!-- {% if app_type not in 'so' %}
     <h2><i class="fa fa-id-badge"></i> NIAP ANALYSIS v1.3</h2>
     <table class="basic">
               <thead>
@@ -715,7 +715,7 @@
               {% endfor %} 
             </tbody>
                   </table>
-    {% endif %}
+    {% endif %} -->
 <!-- Added for anyone who needs QUARK Results in Report
        {% if quark %} 
       <h2><i class="fab fa-quora"></i> QUARK </h2>
@@ -745,7 +745,7 @@
         {% endif %}
 -->
 
-    {% if malware_permissions %}
+    <!-- {% if malware_permissions %}
     <h2><i class="fa fa-braille"></i> ABUSED PERMISSIONS</h2>
 
     <table id="table_ofac" class="table table-bordered table-hover table-striped">
@@ -779,11 +779,11 @@
       <br/>
       <h3>Other Common Permissions:</h3> Permissions that are commonly abused by known malware. 
     </p>
-      {% endif %}
+      {% endif %} -->
             
  <!-- ===========================end malware permissions  ================================== -->
 
-      {% if domains  %}
+      <!-- {% if domains  %}
       <h2><i class="fa fa-exclamation"></i> OFAC SANCTIONED COUNTRIES</h2>
       <p>This app may communicate with the following OFAC sanctioned list of countries.</p>
       <table id="table_ofac" class="table table-bordered table-hover table-striped">
@@ -851,9 +851,9 @@
                   {% endfor %}
                 </tbody>
             </table>
-      {% endif %}
+      {% endif %} -->
 <!-- Display urls only for so files-->
-{% if app_type in 'so' %}
+<!-- {% if app_type in 'so' %}
        {% if urls %} 
       <h2><i class="fas fa-globe"></i> URLS </h2>
       <table class="basic">
@@ -879,7 +879,7 @@
 										</tbody>
 										</table>
         {% endif %}
-{% endif %}
+{% endif %} -->
        {% if firebase_urls %} 
       <h2><i class="fas fa-database"></i> FIREBASE DATABASES</h2>
             <table class="basic">
@@ -939,7 +939,7 @@
       {% endif %}
 
   
-      {% if trackers|key:"trackers" %}
+      <!-- {% if trackers|key:"trackers" %}
       <h2><i class="fas fa-user-secret"></i> TRACKERS</h2>
        <table class="basic">
             <thead>
@@ -966,9 +966,9 @@
               {% endfor %}
             </tbody>
         </table>
-         {% endif %}
+         {% endif %} -->
     
-        {% if secrets %}
+        <!-- {% if secrets %}
         <h2><i class="fas fa-key"></i> HARDCODED SECRETS</h2>
             <table class="basic">
                     <thead>
@@ -986,7 +986,7 @@
                     {% endfor %} 
                       </tbody>
                       </table>
-        {% endif %}
+        {% endif %} -->
 
         <!--Only for so-->
         {% if app_type in 'so' %}
@@ -1045,10 +1045,10 @@
 		               <h5>Privacy Policy:</h5> 
                    <a target="_blank" href="{{ playstore_details.privacyPolicy }}" rel="noopener noreferrer">Privacy link</a>
 		            </p>
-                 <p>                                       
+                 <!-- <p>                                       
                       <h5>Description:</h5> 
                       <p>{{ playstore_details.description }}</p>
-                  </p>
+                  </p> -->
              
        {% endif %}
     </article>
